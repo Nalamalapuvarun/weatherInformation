@@ -8,10 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.BadRequestException;
 import java.text.ParseException;
 
-import static java.lang.Double.valueOf;
 import static java.util.Objects.isNull;
 import static org.springframework.http.HttpStatus.CREATED;
 
