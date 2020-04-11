@@ -25,7 +25,7 @@ public class WeatherController {
             notes = "Retrieved the Weather information for the given location for today and same time last year")
     public WeatherResponseJson getWeatherInfo(@PathVariable("latitude") double latitude,
                                               @PathVariable("longitude") double longitude) throws ParseException {
-
+        //42.335190/-83.049190
 
         return weatherService.getWeatherInformation(valueOf(latitude), valueOf(longitude));
     }
