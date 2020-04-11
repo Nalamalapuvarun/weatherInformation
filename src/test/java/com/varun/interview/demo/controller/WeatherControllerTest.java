@@ -28,10 +28,9 @@ public class WeatherControllerTest {
 
         when(service.getWeatherInformation(1, 2)).thenReturn(expected);
 
-        WeatherResponseJson actual = classUnderTest.getWeatherInfo("1", "2");
+        WeatherResponseJson actual = classUnderTest.getWeatherInfo(1, 2);
 
         assertThat(actual).isNotNull();
         assertThat(actual).isEqualTo(expected);
     }
-
 }
