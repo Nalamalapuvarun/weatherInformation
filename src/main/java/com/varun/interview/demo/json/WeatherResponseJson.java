@@ -14,4 +14,5 @@ import java.util.List;
 public class WeatherResponseJson {
 
     List<WeatherResponse> weatherResponses;
+    String errorMessage;
 }

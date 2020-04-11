@@ -12,7 +12,7 @@ public class WeatherInvoker {
     private static final String URl = "https://api.darksky.net/forecast/0b67f8f549800f7bdeccc85500ba9324/";
     private RestTemplate restTemplate = new RestTemplate();
 
-    public WeatherJson getWeatherInformation(double latitude, double longitude, long time) {
+    public WeatherJson getWeatherInformation(Double latitude, Double longitude, long time) {
 
         String weatherUrl;
         if (time == 0) {

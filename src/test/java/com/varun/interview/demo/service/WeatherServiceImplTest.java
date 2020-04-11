@@ -44,10 +44,10 @@ public class WeatherServiceImplTest {
         when(weatherTransformer.buildWeatherResponse(weatherJson1)).thenReturn(weatherResponse2);
         when(weatherTransformer.getLastYearEpochTime()).thenReturn(5L);
 
-        when(weatherInvoker.getWeatherInformation(1L, 2L, 0)).thenReturn(weatherJson1);
-        when(weatherInvoker.getWeatherInformation(1L, 2L, 5L)).thenReturn(weatherJson2);
+        when(weatherInvoker.getWeatherInformation(1.0, 2.0, 0)).thenReturn(weatherJson1);
+        when(weatherInvoker.getWeatherInformation(1.0, 2.0, 5L)).thenReturn(weatherJson2);
 
-        WeatherResponseJson actual = classUnderTest.getWeatherInformation(1L, 2L);
+        WeatherResponseJson actual = classUnderTest.getWeatherInformation(1.0, 2.0);
 
         assertThat(actual).isNotNull();
         assertThat(actual.getWeatherResponses().size()).isEqualTo(2);

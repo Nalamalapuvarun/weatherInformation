@@ -19,7 +19,7 @@ public class WeatherServiceImpl {
     private final WeatherTransformer weatherTransformer;
     private final WeatherInvoker weatherInvoker;
 
-    public WeatherResponseJson getWeatherInformation(double latitude, double longitude) throws ParseException {
+    public WeatherResponseJson getWeatherInformation(Double latitude, Double longitude) throws ParseException {
         WeatherJson weatherJson = weatherInvoker.getWeatherInformation(latitude, longitude, 0);
         WeatherResponse weatherResponse = weatherTransformer.buildWeatherResponse(weatherJson);
 
