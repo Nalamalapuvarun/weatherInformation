@@ -46,7 +46,9 @@ public class WeatherControllerTest {
         expectedException.expect(CustomException.class);
         expectedException.expectMessage("Latitude Value Must be valid");
 
-        classUnderTest.getWeatherInfo(null, 2.0);
+        WeatherResponseJson actual = classUnderTest.getWeatherInfo(null, 2.0);
+
+        assertThat(actual.getErrorMessage()).isEqualTo("Latitude Value Must be valid");
 
         verifyNoInteractions(service);
     }
@@ -56,7 +58,9 @@ public class WeatherControllerTest {
         expectedException.expect(CustomException.class);
         expectedException.expectMessage("Longitude Value Must be valid");
 
-        classUnderTest.getWeatherInfo(2.0, null);
+        WeatherResponseJson actual = classUnderTest.getWeatherInfo(2.0, null);
+
+        assertThat(actual.getErrorMessage()).isEqualTo("Longitude Value Must be valid");
 
         verifyNoInteractions(service);
     }
