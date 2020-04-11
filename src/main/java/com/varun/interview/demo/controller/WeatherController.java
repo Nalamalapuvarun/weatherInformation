@@ -20,7 +20,7 @@ public class WeatherController {
     private final WeatherServiceImpl weatherService;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(value = "/getWeather/{latitude}/{longitude}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/getWeather/{latitude}/{longitude}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "getWeatherInfo",
             notes = "Retrieved the Weather information for the given location for today and same time last year")
     public WeatherResponseJson getWeatherInfo(@PathVariable("latitude") double latitude,
