@@ -21,6 +21,7 @@ public class WeatherController {
     private final WeatherServiceImpl weatherService;
 
     @ResponseStatus(CREATED)
+    @CrossOrigin(value = "http://localhost:3000")
     @GetMapping(value = "/getWeather/{latitude}/{longitude}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "getWeatherInfo",
             notes = "Retrieved the Weather information for the given location for today and same time last year")
